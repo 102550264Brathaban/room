@@ -18,7 +18,7 @@ class Repository (private val shopdao : ShoppingDao) {
         shopdao.DeleteAll()
     }
 
-    suspend fun getAllData() : LiveData<List<Shopping>>
+     fun getAllData() : LiveData<List<Shopping>>
     {
         return shoppings
     }

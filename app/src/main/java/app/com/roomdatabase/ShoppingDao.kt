@@ -10,12 +10,12 @@ import androidx.room.Query
 interface ShoppingDao {
 
     @Insert
-    fun SaveShopping(shopping : Shopping)
+    suspend fun SaveShopping(shopping : Shopping)
 
     @Query("Select * from Shopping ")
     fun ShowShopping() : LiveData<List<Shopping>>
 
     @Query("delete from Shopping")
-    fun DeleteAll()
+    suspend fun DeleteAll()
 
 }

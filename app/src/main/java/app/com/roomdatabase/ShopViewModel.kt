@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class ShopViewModel (application: Application): AndroidViewModel(application){
@@ -18,13 +19,13 @@ class ShopViewModel (application: Application): AndroidViewModel(application){
 
     fun addShopping(shopping: Shopping)
     {
-        viewModelScope.launch{
+        viewModelScope.launch(Dispatchers.IO){
             repository.addShopping(shopping)
         }
     }
     fun deleteAllShoppings()
     {
-      viewModelScope.launch {
+      viewModelScope.launch{
           repository.deleteAll()
       }
     }

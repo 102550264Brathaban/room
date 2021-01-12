@@ -30,14 +30,15 @@ class MainActivity : AppCompatActivity() {
         shop.IsBigSale = true
         shop.amount = 100
         shop.name = "lentil"
-        shopViewModel.deleteAllShoppings()
+      //  shopViewModel.deleteAllShoppings()
         shopViewModel.addShopping(shop)
 
 
      shopViewModel.allData.observe(this, Observer {
          it.forEach {
              Log.i("hai", it.name)
-             Log.i("hai", it.amount.toString())
+             Log.i("hai", "${it.amount}")
+             Log.i("hai", "${it.IsBigSale}")
          }
 
      })
