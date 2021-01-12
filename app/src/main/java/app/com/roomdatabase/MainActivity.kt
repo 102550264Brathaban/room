@@ -30,8 +30,8 @@ class MainActivity : AppCompatActivity() {
         shop.IsBigSale = true
         shop.amount = 100
         shop.name = "lentil"
-        //shopViewModel.deleteAllShoppings()
-        //shopViewModel.addShopping(shop)
+        shopViewModel.deleteAllShoppings()
+        shopViewModel.addShopping(shop)
 
 
      shopViewModel.allData.observe(this, Observer {
